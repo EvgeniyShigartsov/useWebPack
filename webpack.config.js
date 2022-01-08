@@ -1,23 +1,23 @@
 const webpack = require('webpack')
 const path = require('path')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const BUILD_DIR = path.join(__dirname, 'dist')
 const APP_DIR = path.join(__dirname, 'src')
 
 const config = {
-  mode: 'production',
+  mode: 'development',
   watch: true,
   entry: `${APP_DIR}/index.js`,
   output: {
     path: BUILD_DIR,
-    filename: 'app.bundle.js',
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules|dist/,
-        // include: APP_DIR,
+        exclude: /(node_modules|dist|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -35,6 +35,11 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new htmlWebpackPlugin({
+      template: 'index.html',
+    }),
+  ],
 }
 
 module.exports = config
