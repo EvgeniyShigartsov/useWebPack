@@ -13,7 +13,8 @@ const config = {
   entry: `${APP_DIR}/index.js`,
   output: {
     path: BUILD_DIR,
-    filename: '[name].chunk.js',
+    filename: '[name].[contenthash].chunk.js',
+    clean: true,
   },
   module: {
     rules: [
@@ -40,6 +41,7 @@ const config = {
   plugins: [
     new htmlWebpackPlugin({
       template: 'index.html',
+      title: 'webpack',
     }),
   ],
   optimization: {

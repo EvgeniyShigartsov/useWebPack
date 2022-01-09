@@ -12,6 +12,7 @@ const App = () => {
     <Router>
       <Header />
       <Logo />
+      <p>some</p>
       <div>
         <nav>
           <ul>
@@ -31,7 +32,7 @@ const App = () => {
             <About />
           </Route>
           <Route path="/users">
-            <About />
+            <Users />
           </Route>
           <Route path="/">
             <Home />
