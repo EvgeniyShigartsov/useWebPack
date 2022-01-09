@@ -16,7 +16,7 @@ const config = {
   output: {
     path: BUILD_DIR,
     filename: '[name].[contenthash].chunk.js',
-    // chunkFilename: '[name].[contenthash].chunkFile.js',
+    chunkFilename: '[name].[contenthash].chunkFile.js',
     publicPath: '/',
     clean: true,
   },
@@ -45,7 +45,6 @@ const config = {
   plugins: [
     new htmlWebpackPlugin({
       template: 'index.html',
-      title: 'webpack',
     }),
   ],
   devServer: {
