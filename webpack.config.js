@@ -2,10 +2,7 @@ const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const BUILD_DIR = path.join(__dirname, 'dist')
-const BUILD_DIR_ASSETS = path.join(BUILD_DIR, 'assets')
 const APP_DIR = path.join(__dirname, 'src')
-
-console.log(BUILD_DIR_ASSETS)
 
 const VENDOR_LIBS = ['react', 'react-dom', 'react-router-dom']
 
@@ -16,7 +13,7 @@ const config = {
   output: {
     path: BUILD_DIR,
     filename: '[name].[contenthash].chunk.js',
-    chunkFilename: '[name].[contenthash].chunkFile.js',
+    chunkFilename: '[name].[contenthash].chunk.js',
     publicPath: '/',
     clean: true,
   },
